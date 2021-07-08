@@ -1,6 +1,9 @@
-import { useState } from "react"
+import { useState,useContext } from "react"
+import { SettingsContext } from '../context/SettingsContext'
 
 export default function SetPomodoro() {
+	
+	const {updateExecute} = useContext(SettingsContext)
 	
 	const [newTimer, setNewTimer] = useState({
         work: 0.3,
@@ -40,7 +43,7 @@ export default function SetPomodoro() {
    
 	const handleSubmit = e => {
         e.preventDefault()
-        //updateExecute(newTimer)
+        updateExecute(newTimer)
     }
 	
 	return (
