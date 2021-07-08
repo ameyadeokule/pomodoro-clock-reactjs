@@ -38,10 +38,14 @@ export default function SetPomodoro() {
         }
     }
    
+	const handleSubmit = e => {
+        e.preventDefault()
+        //updateExecute(newTimer)
+    }
 	
 	return (
         <div className="form-container">
-            <form noValidate>
+            <form noValidate onSubmit={handleSubmit}>
                 <div className="input-wrapper">
                     <input className="input" type="number" name="work" onChange={handleChange} value={newTimer.work} />
                     <input className="input" type="number" name="shortBreak" onChange={handleChange} value={newTimer.short} />
